@@ -1,6 +1,6 @@
 # APEONX 1000× website
 
-A responsive, static community website for the APEONX Solana token. The site uses the campaign artwork supplied by the project and links directly to the supplied token and community destinations.
+A responsive, static community website for the APEONX Solana token. The site loads the campaign artwork supplied by the project from a permanent public CDN and links directly to the supplied token and community destinations.
 
 ## Included
 
