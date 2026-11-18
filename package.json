@@ -1,0 +1,11 @@
+{
+  "name": "apeonx-1000x-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "APEONX 1000× Solana community website",
+  "scripts": {
+    "check": "node --check app.js && node scripts/check.mjs",
+    "test": "npm run check",
+    "build": "npm run check"
+  }
+}
