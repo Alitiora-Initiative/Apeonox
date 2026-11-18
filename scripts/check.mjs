@@ -13,7 +13,7 @@ const contract = "EHuyvYuz6umJ7URnb8B81YJBjrJ9EFoTjFVdhecepump";
 
 assert.equal(pkg.name, "apeonx-1000x-site", "package metadata must match the project");
 assert.ok(html.includes("<title>APEONX 1000× — Big Ape Energy</title>"), "page title is missing");
-assert.ok(html.includes("/assets/apeonx-campaign.webp"), "campaign artwork must be used");
+assert.ok(html.includes("https://d2ol7oe51mr4n9.cloudfront.net/user_3Le5JTlKWJPtzS3UUtJFqjNYLbc/e9b8474a-0d7a-4c82-87a9-06a5aa06f444.png"), "campaign artwork URL must be used");
 assert.ok(html.includes(contract), "contract address is missing from the page");
 assert.ok(html.includes("https://t.me/apeonx1000x"), "Telegram link is missing");
 assert.ok(html.includes("https://x.com/ChiefRoastAI"), "X link is missing");
@@ -26,9 +26,7 @@ assert.ok(css.includes("prefers-reduced-motion"), "reduced-motion support is mis
 assert.ok(html.includes("Skip to content"), "skip link is missing");
 assert.ok(html.includes("lock wallet"), "lock verification caveat is missing");
 
-const image = await stat(path.join(root, "assets/apeonx-campaign.webp"));
-assert.ok(image.size > 10_000, "campaign artwork file looks unexpectedly small");
-assert.ok(image.size < 1_000_000, "campaign artwork should be web-optimized");
+assert.ok(html.includes('alt="APEONX 1000× campaign artwork'), "campaign artwork alt text must be present");
 
 const referenced = [...html.matchAll(/(?:src|href)="\/(?!\/)([^"?#]+)"/g)].map((match) => match[1]);
 for (const asset of referenced) {
